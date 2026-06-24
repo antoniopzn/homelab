@@ -129,14 +129,13 @@ sys_update() {
 install_basics() {
     step "2/12 — PACOTES ESSENCIAIS"
 
-    apt install -y \
-        curl wget git unzip jq htop tmux neofetch \
-        ufw fail2ban crowdsec \
+    apt install -y curl wget git unzip jq htop tmux \
+        ufw fail2ban \
         nginx \
         build-essential libssl-dev pkg-config \
-        software-properties-common gnupg lsb-release \
+        gnupg lsb-release \
         sqlite3 ca-certificates \
-        2>&1 | tee -a "$LOG_FILE" | tail -3
+        2>&1 | tail -1
 
     ok "Pacotes essenciais instalados"
 }
